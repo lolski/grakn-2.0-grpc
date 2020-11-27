@@ -1,0 +1,17 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %magenta(%X{address}) %X{currentTime} %yellow(%logger{10}) %-5level %cyan([%thread]) - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!--
+      enable this line in order to change log level selectively, for a particular java package
+      <logger name="grakn.cluster" level="DEBUG" />
+    -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <logger name="io.netty" level="INFO" />
+    <logger name="io.grpc" level="INFO" />
+</configuration>
